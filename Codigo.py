@@ -85,3 +85,20 @@ class Nomina:
                 print("Esto es lo que te pagaran si trabaste horas dobles o triples: ",suma1)
                 totalpercepcion=sueldoordinario+suma1
                 print("Esto es tu sueldo total: ",totalpercepcion)
+
+
+opcion=1             
+while opcion==1:
+    nombre=(input("Cual es tu Nombre: "))
+    departamento=(input("Cual es tu Departamento: "))
+    cuotadiaria=int(input("Dime tu cuota diaria: "))
+    horastotalesextras=int(input("Dime cuantas horas extras haz trabajado : "))
+    diaslaborados=int(input("Dime cuantos dias haz laborado : "))
+    primadominical=int(input("Trabajasate el Domingo  SI=1  NO=2: "))
+    print("-"*100)
+    x=Nomina(nombre,departamento,cuotadiaria,horastotalesextras,diaslaborados,primadominical)
+    x.Sacanominas()
+    print("Esta es tu Nacionalidad: ",x.nacionalidad)
+    print("Numero de persona registrada : ",x.numeroDePersonas)
+    print("-"*40)
+    opcion=int(input("Deseas seguir registrando empleados 1=SI 2 =NO : "))
