@@ -56,7 +56,7 @@ class Nomina:
                 resta=0
                 sumax=(xd+zd+resta)
                 print(f"Triple :{resta}")
-                print("Esto es lo que te pagaran si trabaste horas dobles o triples: ",sumax)
+                print("Esto es lo que te pagaran si trabajaste horas dobles o triples: ",sumax)
                 totalpercepcion=sueldoordinario+sumax
                 print("Esto es tu sueldo total: ",totalpercepcion)
             
@@ -64,7 +64,7 @@ class Nomina:
                 suma2=(triple*costoporhora)
                 suma1=(xd+zd+suma2)
                 print(f"Triple :{suma2}")
-                print("Esto es lo que te pagaran si trabaste horas dobles o triples: ",suma1)
+                print("Esto es lo que te pagaran si trabajaste horas dobles o triples: ",suma1)
                 totalpercepcion=sueldoordinario+suma1
                 print("Esto es tu sueldo total: ",totalpercepcion)
 
@@ -77,7 +77,7 @@ try:
         cuotadiaria=int(input("Dime tu cuota diaria: "))
         horastotalesextras=int(input("Dime cuantas horas extras haz trabajado : "))
         diaslaborados=int(input("Dime cuantos dias haz laborado : "))
-        primadominical=int(input("Trabajasate el Domingo  SI=1  NO=2: "))
+        primadominical=int(input("Trabajaste el Domingo  SI=1  NO=2: "))
         print("-"*100)
         x=Nomina(nombre,departamento,cuotadiaria,horastotalesextras,diaslaborados,primadominical)
         x.Sacanominas()
@@ -85,6 +85,7 @@ try:
         print("Numero de persona registrada : ",x.numeroDePersonas)
         print("-"*40)
         opcion=int(input("Deseas seguir registrando empleados 1=SI 2 =NO : "))
+        print("-"*50)
 
 except:
     print("*"*30)
