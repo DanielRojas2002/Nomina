@@ -1,3 +1,4 @@
+import sys
 class Nomina:
     numeroDePersonas=0
     nacionalidad="Mexicana"
@@ -25,29 +26,10 @@ class Nomina:
             domingo=self.__cuotadiaria-self.__cuotadiaria
             
             
-        if self.__diaslaborados==1:
+        if self.__diaslaborados==self.__diaslaborados:
             suma=(self.__cuotadiaria/6)*self.__diaslaborados
             print("Este es lo que te pagaremos en el septimo dia: " ,suma)
             
-        elif self.__diaslaborados==2:
-            suma=(self.__cuotadiaria/6)*self.__diaslaborados
-            print("Este es lo que te pagaremos en el septimo dia: ",suma)
-        
-        elif self.__diaslaborados==3:
-            suma=(self.__cuotadiaria/6)*self.__diaslaborados
-            print("Este es lo que te pagaremos en el septimo dia: ",suma)
-        
-        elif self.__diaslaborados==4:
-            suma=(self.__cuotadiaria/6)*self.__diaslaborados
-            print("Este es lo que te pagaremos en el septimo dia: ",suma)
-        
-        elif self.__diaslaborados==5:
-            suma=(self.__cuotadiaria/6)*self.__diaslaborados
-            print("Este es lo que te pagaremos en el septimo dia: ",suma)
-            
-        elif diaslaborados==6:
-            suma=(self.__cuotadiaria/6)*self.__diaslaborados
-            print("Este es lo que te pagaremos en el septimo dia: ",suma)
             
         costoporhora=(self.__cuotadiaria/8)
         print("Esto es lo que ganas por hora: ",costoporhora)
@@ -87,18 +69,29 @@ class Nomina:
                 print("Esto es tu sueldo total: ",totalpercepcion)
 
 
-opcion=1             
-while opcion==1:
-    nombre=(input("Cual es tu Nombre: "))
-    departamento=(input("Cual es tu Departamento: "))
-    cuotadiaria=int(input("Dime tu cuota diaria: "))
-    horastotalesextras=int(input("Dime cuantas horas extras haz trabajado : "))
-    diaslaborados=int(input("Dime cuantos dias haz laborado : "))
-    primadominical=int(input("Trabajasate el Domingo  SI=1  NO=2: "))
-    print("-"*100)
-    x=Nomina(nombre,departamento,cuotadiaria,horastotalesextras,diaslaborados,primadominical)
-    x.Sacanominas()
-    print("Esta es tu Nacionalidad: ",x.nacionalidad)
-    print("Numero de persona registrada : ",x.numeroDePersonas)
-    print("-"*40)
-    opcion=int(input("Deseas seguir registrando empleados 1=SI 2 =NO : "))
+opcion=1
+try:
+    while opcion==1:
+        nombre=(input("Cual es tu Nombre: "))
+        departamento=(input("Cual es tu Departamento: "))
+        cuotadiaria=int(input("Dime tu cuota diaria: "))
+        horastotalesextras=int(input("Dime cuantas horas extras haz trabajado : "))
+        diaslaborados=int(input("Dime cuantos dias haz laborado : "))
+        primadominical=int(input("Trabajasate el Domingo  SI=1  NO=2: "))
+        print("-"*100)
+        x=Nomina(nombre,departamento,cuotadiaria,horastotalesextras,diaslaborados,primadominical)
+        x.Sacanominas()
+        print("Esta es tu Nacionalidad: ",x.nacionalidad)
+        print("Numero de persona registrada : ",x.numeroDePersonas)
+        print("-"*40)
+        opcion=int(input("Deseas seguir registrando empleados 1=SI 2 =NO : "))
+
+except:
+    print("*"*30)
+    print(f"Ocurrió un problema {sys.exc_info()[0]}")
+    print(f"Ocurrió un problema {sys.exc_info()[1]}")
+    print("Intenta respetar lo que se te pide :) ")
+    print("*"*30)
+    
+finally:
+    print("*"*30,"Fin del Programa","*"*30)
